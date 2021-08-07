@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% load patienttags %}
 
 <head>
     <meta charset="UTF-8">
@@ -62,7 +63,8 @@
                             <a class="nav-link" href="/addpatient" style="font-size: 20px;">Add Patient</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/patientlist" style="font-size: 20px;">Patient List</a>
+                            <a class="nav-link" href="/patientlist" style="font-size: 20px;">Patient
+                                List<span style="color:rgb(255, 255, 255);">&nbsp;({% patient_count %})</span></a>
                         </li>
                     </ul>
                 </div>
