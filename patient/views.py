@@ -6,13 +6,13 @@ from patient.models import Patient
 # Create your views here.
 
 
-# to get list of patients
+# get list of patients
 class PatientListView(ListView):
     model = Patient
     template_name = "patientlist.html"
 
 
-# to insert new patient data
+# insert new patient data
 class PatientData(View):
 
     # to get add patient template
@@ -48,9 +48,10 @@ class PatientData(View):
             print(e)
 
 
-# to update patient data
+# update patient data
 class UpdatePatient(View):
 
+    # to get id from patientlist and load patient data with update patient template
     def get(self, request, id):
         try:
             print(id)
@@ -69,6 +70,7 @@ class UpdatePatient(View):
         except Exception as e:
             print(e)
 
+    # after submitting updated data update the patient with matching id
     def post(self, request):
         try:
             id = request.POST.get("id")
